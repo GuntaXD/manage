@@ -1,0 +1,228 @@
+:root{
+    --bright-red: hsl(12, 88%, 59%);
+    --dark-blue: hsl(228, 39%, 23%);
+    --dark-grayish-blue: hsl(227, 12%, 61%);
+    --very-dark-blue: hsl(233, 12%, 13%);
+    --very-pale-red: hsl(13, 100%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: #FFF;
+    --black: #000;
+}
+
+*,
+*::before,
+*::after{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Be Vietnam', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+}
+
+/* -----------------navbar styles---------------------------- */
+
+.navbar{
+    height: 80px;
+    width: 100%;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .logo__link{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+        .logo__img{
+            margin-top: 12px;
+            height: 24px;
+            width: 146px;
+        }
+
+    .navbar__group{
+        background: linear-gradient( 180deg , #FFF0 0% , var(--very-dark-blue) 100% );
+        height: calc( 100vh - 80px );
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        padding: 2em 8% 0;
+        display: none;
+    }
+
+        .navbar__group--container{
+            background: var(--white);
+            height: 40%;
+            width: 100%;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1em 0;
+        }
+
+            .navbar__link{
+                color: var(--dark-blue);
+                font-size: calc( .8em + 1vw);
+                font-weight: 700;
+            }
+
+    .navbar.active .navbar__group{
+        display: block;
+        animation: apareciendo .6s;
+    }
+
+    .start__link{
+        display: none;
+    }
+
+
+    .btn__menu{
+        display: block;
+        height: 20px;
+        width: 34px;
+        position: relative;
+        cursor: pointer;
+    }
+
+        .btn__menu--span{
+            position: absolute;
+            content: '';
+            background: var(--dark-blue);
+            height: 4px;
+            width: 30px;
+            transition: all 400ms ease; 
+            z-index: 101;
+        }
+
+            .span2{
+                top: 8px;
+            }
+
+            .span3{
+                top: 16px;
+            }
+
+            .navbar.active .span1{
+                transform: rotate(140deg);
+                top: 10px;
+            }
+
+            .navbar.active .span2{
+                opacity: 0%;
+            }
+
+            .navbar.active .span3{
+                transform: rotate(-140deg);
+                top: 10px;
+            }
+
+/* ------------------MEDIAS QUERIES-------------------------------- */
+
+@media all and ( min-width: 320px ){
+
+}
+
+@media all and ( min-width: 480px ){
+
+}
+
+@media all and ( min-width: 600px ){
+
+}
+
+@media all and ( min-width: 768px ){
+
+    /* ----------------NAVBAR---------------------------------------- */
+
+    .navbar__group--container{
+        height: 50%;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+}
+
+@media all and ( min-width: 1024px ){
+
+    /* ----------------NAVBAR---------------------------------------- */
+
+    .navbar__group{
+        background: transparent;
+        height: 100%;
+        width: 50%;
+        position: static;
+        display: block;
+        padding: 0;
+    }
+
+        .navbar__group--container{
+            height: 100%;
+            width: 100%;
+            flex-direction: row;
+            /* justify-content: space-around; */
+            margin: 0;
+            padding: 0;
+        }
+
+            .navbar__link{
+                font-size: 1em;
+            }
+
+            .navbar__link:hover{
+                color: var(--dark-grayish-blue);
+            }
+
+    .start__link{
+        background-color: var(--bright-red);
+        height: 60%;
+        width: 14%;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        font-size: 1em;
+        box-shadow: 0 4px 8px 2px #0003;
+    }
+
+    .start__link:hover{
+        opacity: .8;
+    }
+
+    .start__link:active{
+        box-shadow: none;
+    }
+
+    .btn__menu{
+        display: none;
+    }
+}
+
+/* -----------------------ANIMATIONS------------------------------ */
+
+@keyframes apareciendo{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

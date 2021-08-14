@@ -19,7 +19,6 @@ let btn_left = document.querySelector(".testimonial__btn--left");
 window.addEventListener("resize", ()=>{
     carousel.scrollLeft = 0;
     width = carousel.offsetWidth;
-    console.log("entre");
     setTimeout( moverDot , 800 );
 });
 

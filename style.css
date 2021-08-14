@@ -17,7 +17,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
+
 }
 
 body{
@@ -392,6 +392,56 @@ li{
         box-shadow: none;
     }
 
+/* simplify */
+
+.simplify{
+    height: 360px;
+    background-image: url("images/bg-simplify-section-mobile.svg");
+    background-repeat: no-repeat;
+    background-color: var(--bright-red);
+    background-position: 0 5vh;
+}
+
+.simplify__container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+    .simplify__title{
+        width: 80%;
+        margin-bottom: -3em;
+        color: var(--white);
+        font-size: clamp( 2em , calc( 2em + 1vw ) , 4em );
+        text-align: center;
+    }
+
+    .simplify__link{
+        background-color: var(--white);
+        height: clamp( 40px , 10% , 60px );
+        width: clamp( 100px , 50% , 160px);
+        margin: 0 auto ;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--bright-red);
+        font-size: 1em;
+        font-weight: bold;
+        box-shadow: 0 4px 8px 2px #0003;
+    }
+
+    .simplify__link:hover{
+        opacity: .8;
+    }
+
+    .simplify__link:active{
+        box-shadow: none;
+    }
+
 /* grid */
 
 .grid{
@@ -579,6 +629,29 @@ li{
             cursor: pointer;
         }
 
+        /* simplify */
+        .simplify{
+            background-image: url("images/bg-simplify-section-desktop.svg");
+            background-position: center;
+        }
+
+        .simplify__container{
+            justify-content: space-between;
+            padding: 0 4%;
+        }
+
+        .simplify__title{
+            width: 50%;
+            margin: 0;
+            text-align: left;
+        }
+
+        .simplify__link{
+            margin: 0;
+            width: 14%;
+            margin: 0;
+        }
+
 
 }
 
@@ -664,7 +737,7 @@ li{
 
 @media all and ( min-width: 1200px ){
 
-    .header , .about{
+    .header , .about , .testimonials , .simplify__container{
         max-width: 1440px;
         margin: 0 auto;
     }

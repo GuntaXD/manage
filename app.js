@@ -66,3 +66,40 @@ function moverDot(){
     dot[ limit ].classList.add("active");
 
 }
+
+//funcionalidades email
+
+let form = document.querySelector('form');
+
+form.addEventListener( 'invalid',function(event){
+    event.preventDefault();
+},true);
+
+let email = form.querySelector(".email__input");
+
+email.addEventListener("invalid" , ()=>{
+    
+    if( form.querySelector(".error") ){
+        let error = form.querySelector(".error");
+        form.removeChild(error);
+    }
+
+    let error = document.createElement("div");
+
+    error.textContent = "please insert a valid email";
+
+    error.className = "error";
+
+    let submit = form.querySelector(".email__submit");
+
+    form.insertBefore(error,submit);
+
+    window.setTimeout(function(){
+
+        if( form.querySelector(".error") ){
+            let error = form.querySelector(".error");
+            form.removeChild(error);
+        }
+    
+    },5000);
+});

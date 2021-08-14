@@ -16,7 +16,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    scroll-behavior: smooth;
+    
 }
 
 body{
@@ -282,6 +283,115 @@ li{
             font-size: .8em;
         }
 
+/* testimonial slider */
+
+.testimonials{
+    /* background-color: lightcoral; */
+    height: 100vh;
+    width: 100%;
+    padding-top: 10vh;
+    position: relative;
+}
+
+    .testimonials__title{
+        text-align: center;
+        font-size: clamp( 1em , calc( 1.4em + 2vw ) , 2.6em );
+        color: var(--dark-blue);
+    }
+
+    .testimonials__carousel{
+        /* background-color: orange; */
+        height: 60%;
+        width: 100%;
+        margin-top: 5vh;
+        overflow-x: scroll;
+        display: flex;
+        
+    }
+
+    .testimonials__carousel::-webkit-scrollbar {
+        display: none;
+    }
+
+        .carousel__element{
+            height: 100%;
+            width: 100%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .testimonial{
+                height: 80%;
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+                .testimonial__img{
+                    height: 34%;
+                    width: auto;
+                }
+
+                .testimonial__name{
+                    color: var(--dark-blue);
+                    font-weight: bold;
+                }
+
+                .testimonial__paragraph{
+                    text-align: center;
+                    color: var(--dark-grayish-blue);
+                }
+
+    .testimonial__dots{
+        height: 20px;
+        width: 100px;
+        margin: 0 auto;
+        margin-bottom: 3em;
+    }
+
+        .dot{
+            display: inline-block;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            border: 1px solid var(--bright-red);
+            margin-left: 6px;
+        }
+
+        .dot.active{
+            background: var(--bright-red);
+        }
+
+    .testimonial__btn--left , .testimonial__btn--right{
+        display: none;
+    }
+
+    .testimonial__link{
+        background-color: var(--bright-red);
+        height: clamp( 40px , 10% , 60px );
+        width: clamp( 100px , 50% , 160px);
+        margin: 0 auto;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        font-size: 1em;
+        box-shadow: 0 4px 8px 2px #0003;
+    }
+
+    .testimonial__link:hover{
+        opacity: .8;
+    }
+
+    .testimonial__link:active{
+        box-shadow: none;
+    }
+
 /* grid */
 
 .grid{
@@ -299,7 +409,7 @@ li{
     /* about */
 
     .features__paragraph{
-        font-size: clamp( 1em , calc( 1em + .2vw ) , 2em );
+        font-size: clamp( .8em , calc( .8em + .4vw ) , 2em );
     }
 }
 
@@ -429,6 +539,47 @@ li{
             font-size: 1em;
         }
 
+        /* testimonials */
+
+        .carousel__element{
+            width: calc( 100% / 3);
+        }
+
+        .testimonial{
+            height: 70%;
+        }
+
+        .testimonial__dots{
+            display: none;
+        }
+
+        .testimonial__link{
+            margin-top: 2em;
+        }
+
+        .testimonial__btn--left , .testimonial__btn--right{
+            height: 10%;
+            display: block;
+            position: absolute;
+            opacity: .5;
+        }
+
+        .testimonial__btn--left{
+            top: calc( 10vh + clamp( 1em , calc( 1.4em + 2vw ) , 2.6em ) + 35% - 5%);
+            left: 0;
+        }
+
+        .testimonial__btn--right{
+            top: calc( 10vh + clamp( 1em , calc( 1.4em + 2vw ) , 2.6em ) + 35% - 5%);
+            right: 0;
+        }
+
+        .testimonial__btn--left:hover , .testimonial__btn--right:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+
+
 }
 
 @media all and ( min-width: 1024px ){
@@ -502,6 +653,12 @@ li{
         margin-left: calc( clamp( 60px , 25% , 70px) + 8% );
         margin-right: 0;
         padding-right: 8%;
+    }
+
+    /* testimonial */
+
+    .testimonial{
+        height: 60%;
     }
 }
 

@@ -541,7 +541,7 @@ li{
             .social{
                 height: 80px;
                 width: 100%;
-                margin-top: 1em;
+                margin-top: 2em;
                 display: flex;
                 justify-content: space-between;
             }
@@ -583,6 +583,7 @@ li{
     .features__paragraph{
         font-size: clamp( .8em , calc( .8em + .4vw ) , 2em );
     }
+
 }
 
 @media all and ( min-width: 480px ){
@@ -592,8 +593,6 @@ li{
     .header__info--paragraph{
         width: 80%;
     }
-
-    
 
 }
 

@@ -42,8 +42,6 @@ carousel.addEventListener("touchend" , ()=>{
 
 });
 
-let loco = btn_right.this;
-
 btn_right.addEventListener("click" , ()=>{
     carousel.scrollLeft += width;
 });
